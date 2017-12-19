@@ -2,9 +2,49 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>定制</title>
+    <meta charset="UTF-8">
+    <meta content="telephone=no" name="format-detection">
+
+    <meta name="full-screen" content="yes">
+    <meta name="x5-fullscreen" content="true">
+    <meta name="browsermode" content="application">
+    <meta name="wap-font-scale" content="no">
+    <meta name="x5-page-mode" content="app">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="HandheldFriendly" content="true">
+    <meta name="MobileOptimized" content="width">
+    <meta name="applicable-device" content="mobile">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <link rel="canonical" href="">
+    <script src="./lib/zepto.1.2.0.js"></script>
+    <script src="./lib/vue.js"></script>
+    <link rel="stylesheet" href="./index.css">
 </head>
 <body>
+<div class="wrapper">
+    <div id="app">
+        <div class="settle-title">
+            <div class="-title">
+                <a href="javascript:void(0)" class="select">品类款式</a>
+                    <div class="select-contain">
+                        <a href="javascript:void(0)" class="item box">双扇</a>
+                        <a href="javascript:void(0)" class="item box">单扇</a>
+                        <a href="javascript:void(0)" class="item box">上下扇</a>
+                        <a href="javascript:void(0)" class="item box">网形扇</a>
+                    </div>
+                <a href="javascript:void(0)" class="btn">完成定制</a>
+            </div>
+        </div>
+        <canvas id="settle"></canvas>
+        <simple-counter></simple-counter>
+    </div>
+</div>
 
+<script src="./index.js"></script>
 </body>
 </html>

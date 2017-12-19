@@ -1,0 +1,96 @@
+body {
+    font-size: 14px;
+    font-family: "Helvetica Neue",Helvetica,STHeiTi,sans-serif;
+    line-height: 1.6;
+    min-width: 320px;
+    max-width: 414px;
+    margin: 0 auto;
+    -webkit-tap-highlight-color: transparent;
+}
+article, aside, blockquote, body, button, code, dd, details, div, dl, dt, fieldset, figcaption, figure, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, hr, input, legend, li, menu, nav, ol, p, pre, section, td, textarea, th, ul {
+    margin: 0;
+    padding: 0;
+    font-size: inherit;
+    font-style: inherit;
+    font-family: inherit;
+    outline: 0!important;
+    -webkit-tap-highlight-color: rgba(255,255,255,0);
+}
+a, body {
+    color: #333;
+}
+html {
+    background: #f2f4f7;
+}
+html,body{
+    height: 100%;
+    margin: auto;
+}
+.wrapper{
+    background: #FFF;
+    height: 100%;
+    text-align: center;
+    padding: 15px 0 0 0;
+}
+a{
+    text-decoration: none;
+    font-size: 14px;
+}
+em{
+    font-style: normal;
+}
+.settle-title{
+    height: 45px;
+    line-height: 45px;
+    box-shadow: 0 3px 22px #DDD;
+}
+
+.settle-title .select{
+    position: relative;
+}
+.settle-title .select-contain{
+    position: absolute;
+    left: 42%;
+    top: 36px;
+    background: #ffffff;
+    width: 100px;
+    overflow: hidden;
+    box-shadow: 5px 3px 17px #DDD;
+    display: none;
+}
+.settle-title .select-contain .item{
+    display: block;
+    line-height: 2;
+    font-size: 14px;
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #e6e6e6;
+    border-left: 1px solid #ecebeb;
+}
+
+.settle-title .-title{
+    position: relative;
+}
+.settle-title .btn{
+    padding: 5px 13px;
+    position: absolute;
+    right: 10px;
+    top: 12px;
+    display: inline-block;
+    line-height: 1;
+    background: #23beae;
+    color: #FFF;
+    border-radius: 3px;
+    font-size: 12px;
+}
+.box:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 1px;
+    width: 100%;
+    -webkit-transform: scaleY(.5);
+    -webkit-transform-origin: 0 bottom;
+    background: #dcdcdc
+}
