@@ -25,12 +25,13 @@ html {
 html,body{
     height: 100%;
     margin: auto;
+    overflow: hidden;
 }
 .wrapper{
+    position: relative;
     background: #FFF;
     height: 100%;
     text-align: center;
-    padding: 15px 0 0 0;
 }
 a{
     text-decoration: none;
@@ -40,32 +41,39 @@ em{
     font-style: normal;
 }
 .settle-title{
-    height: 45px;
-    line-height: 45px;
-    box-shadow: 0 3px 22px #DDD;
+    height: 40px;
+    line-height: 40px;
+    background: #FFF;
+   /* padding: 15px 0 0 0;*/
 }
 
 .settle-title .select{
     position: relative;
+    background: url(./img/up.png?v=15) no-repeat 100%/20px;
+    padding-right: 23px;
+    display: inline-block;
+    font-size: 14px;
+}
+.settle-title .select.down-icon{
+    background: url(./img/down.png?v=123) no-repeat 100%/20px;
 }
 .settle-title .select-contain{
     position: absolute;
-    left: 42%;
-    top: 36px;
+    left: 0;
+    top: 42px;
     background: #ffffff;
     width: 100px;
     overflow: hidden;
-    box-shadow: 5px 3px 17px #DDD;
-    display: none;
+    box-shadow: 3px 3px 5px #b9b9b9;
+    /* display: none; */
 }
 .settle-title .select-contain .item{
     display: block;
     line-height: 2;
-    font-size: 14px;
+    font-size: 13px;
     width: 100%;
     border: none;
-    border-bottom: 1px solid #e6e6e6;
-    border-left: 1px solid #ecebeb;
+    color: #666;
 }
 
 .settle-title .-title{
@@ -83,7 +91,7 @@ em{
     border-radius: 3px;
     font-size: 12px;
 }
-.box:after {
+.bottom-half:after {
     content: '';
     position: absolute;
     left: 0;
@@ -92,5 +100,182 @@ em{
     width: 100%;
     -webkit-transform: scaleY(.5);
     -webkit-transform-origin: 0 bottom;
-    background: #dcdcdc
+    background: #dcdcdc;
+}
+.top-half:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 1px;
+    width: 100%;
+    -webkit-transform: scaleY(.5);
+    -webkit-transform-origin: 0 top;
+    background: #dcdcdc;
+}
+.border,.top-half,.bottom-half{
+    position: relative;
+}
+.border:after{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index:10;
+    width: 200%;
+    height:200%;
+    border:1px solid #e0e0e0;
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+    -webkit-transform: scale(.5, .5);
+    transform: scale(.5, .5);
+}
+.content{
+    background: #f3f3f3;
+}
+canvas{
+    box-shadow: 0px 7px 15px #c3c3c3;
+    margin-top: 1px;
+}
+.operate-panel{
+    display: none;
+    background: #FFF;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 5px 0;
+}
+.operate-item{
+    line-height: 32px;
+    text-align: left;
+    margin: 15px 10px;
+    font-size: 14px;
+    white-space: nowrap;
+    overflow: hidden;
+    max-height: 32px;
+}
+.operate-item span{
+    float: left;
+    padding: 0 5px 0 0;
+}
+ul,li{
+    display: inline-block;
+}
+.panel-item{
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    border: 1px solid #fff;
+    /*position: relative;*/
+}
+.panel-item img{
+    display: inline-block;
+    z-index: 5;
+    height: 30px;
+    margin-left: 1px;
+}
+
+.operate-item li{
+    float: left;
+    height: 32px;
+    margin: 0 10px;
+}
+.selected:before{
+    content: '';
+    display: inline-block;
+    border-top: 3px solid #f72d0d;
+    border-bottom: 3px solid #ffffff;
+    border-left: 3px solid #ffffff;
+    border-right: 3px solid #f72d0d;
+    margin-right: -1px;
+    float: right;
+}
+.selected:after{
+    border: 1px solid #0da985;
+}
+
+.filter{
+    /*display: none;*/
+    position: absolute;
+    z-index: 101;
+    width: 100%;
+    background: #FFF;
+    padding: 15px 15px 15px 25px;
+    text-align: left;
+    font-size: 12px;
+}
+.line{
+    line-height: 3;
+}
+
+.line span{
+    color: #ccc;
+}
+.filter-item{
+    padding: 2px 10px;
+    margin: 0 2px;
+    background: #f5f5f5;
+    border-radius: 15px;
+    color: #4e4e4e;
+    font-size: 12px;
+}
+.filter-item.choose{
+    background: #20beae;
+    color: #FFF;
+}
+
+.menu-bottom{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: #FFF;
+    height: 45px;
+    box-shadow: 0px -1px 9px #ab9797;
+}
+.menu-item{
+    color: #999;
+}
+.menu-left{
+    margin-right: 26%;
+}
+.frame-img{
+    margin-left: -1000px;
+    position: absolute;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    width: 100px;
+}
+
+/* 可以设置不同的进入和离开动画 */
+/* 设置持续时间和动画函数 */
+.slide-fade-enter-active {
+    transition: all .3s ease;
+}
+.slide-fade-leave-active {
+    transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+}
+.slide-fade-enter, .slide-fade-leave-to
+    /* .slide-fade-leave-active for below version 2.1.8 */ {
+    transform: translateX(10px);
+    opacity: 0;
+}
+.fade-enter-active, .fade-leave-active {
+    transition: opacity .5s
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active in below version 2.1.8 */ {
+    opacity: 0
+}
+
+.mask{
+    margin: auto;
+    z-index: 10;
+    position: relative;
+    background-color: rgba(208, 202, 202, 0.3);
+    -webkit-filter: blur(2px);
+    -moz-filter: blur(2px);
+    -ms-filter: blur(2px);
+    -o-filter: blur(2px);
+    filter: blur(2px);
 }

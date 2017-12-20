@@ -23,28 +23,151 @@
     <link rel="canonical" href="">
     <script src="./lib/zepto.1.2.0.js"></script>
     <script src="./lib/vue.js"></script>
-    <link rel="stylesheet" href="./index.css">
+    <link rel="stylesheet" href="./index.css?v=21">
 </head>
 <body>
-<div class="wrapper">
-    <div id="app">
-        <div class="settle-title">
-            <div class="-title">
-                <a href="javascript:void(0)" class="select">品类款式</a>
-                    <div class="select-contain">
-                        <a href="javascript:void(0)" class="item box">双扇</a>
-                        <a href="javascript:void(0)" class="item box">单扇</a>
-                        <a href="javascript:void(0)" class="item box">上下扇</a>
-                        <a href="javascript:void(0)" class="item box">网形扇</a>
-                    </div>
+<div class="wrapper" id="app">
+    <div class="content">
+        <div class="settle-title J-settle-title">
+            <p class="-title bottom-half">
+                <a href="javascript:void(0)" :class='filterShow? "select": "select down-icon"'
+                   v-on:click="filterToggle()">品类款式</a>
                 <a href="javascript:void(0)" class="btn">完成定制</a>
+            </p>
+
+            <transition name="fade">
+                <div class="filter" v-show="filterShow">
+                <!--父级-->
+                <div class="line">
+                    <span>品类：</span>
+                    <ul>
+                        <li v-for="(category, index) in filter">
+                            <a href="javascript:void(0)"
+                               v-on:click='chooseItem(index)'
+                               :class="category.selected? 'filter-item choose':'filter-item'">
+                                {{category.name}}</a>
+                        </li>
+                    </ul>
+                </div>
+                <!--子集-->
+                <div class="line">
+                    <span>款式：</span>
+                    <ul>
+                        <template v-for="(category, index) in filter" v-if='category.selected'>
+                            <li v-for="(sty, j) in category.style">
+                                <a href="javascript:void(0)"
+                                   v-on:click='chooseStyle(index, j)'
+                                   :class="sty.selected? 'filter-item choose':'filter-item'">
+                                    {{sty.name}}</a>
+                            </li>
+                        </template>
+                    </ul>
+                </div>
+                <!--子集-->
+                <div class="line">
+                    <span>颜色：</span>
+                    <ul>
+                        <template v-for="(category, index) in filter" v-if='category.selected'>
+
+                            <template v-for="(sty, j) in category.style" v-if='sty.selected'>
+                                <li v-for="(col, i) in sty.color">
+                                    <a href="javascript:void(0)"
+                                       v-on:click='chooseColor(index, j, i)'
+                                       :class="col.selected? 'filter-item choose':'filter-item'">
+                                        {{col.color}}</a>
+                                </li>
+                            </template>
+                        </template>
+                    </ul>
+                </div>
             </div>
+            </transition>
         </div>
-        <canvas id="settle"></canvas>
-        <simple-counter></simple-counter>
+        <canvas id="J-settle">
+        </canvas>
+        <div class="mask" id="J-mask"></div>
     </div>
+
+    <!-- menu  -->
+    <p class="menu-bottom J-menu">
+        <a href="javascript:void(0)" class="menu-item menu-left">素材</a>
+        <a href="javascript:void(0)" class="menu-item">文字</a>
+    </p>
+    <!-- 素材 -->
+    <div class="operate-panel top-half J-panel">
+        <div class="operate-item">
+            <span>颜色:</span>
+            <ul>
+                <li>
+                    <a href="javascript:void(0);" class="panel-item border selected">
+                        <img src="./img/zhutu-blue.png"/></a>
+                </li>
+                <li>
+                    <a href="javascript:void(0);" class="panel-item">
+                        <img src="./img/zhutu-red.png"/></a>
+                </li>
+                <li>
+                    <a href="javascript:void(0);" class="panel-item">
+                        <img src="./img/zhutu-yellow.png"/></a>
+                </li>
+                <li>
+                    <a href="javascript:void(0);" class="panel-item">
+                        <img src="./img/zhutu-green.png"/></a>
+                </li>
+                <li>
+                    <a href="javascript:void(0);" class="panel-item">
+                        <img src="./img/zhutu-other.png"/></a>
+                </li>
+            </ul>
+        </div>
+        <div class="operate-item">
+            <span>图案:</span>
+            <ul>
+                <li>
+                    <a href="javascript:void(0);" class="panel-item">
+                        <img src="./img/bianhua-blue.png"/></a>
+                </li>
+                <li>
+                    <a href="javascript:void(0);" class="panel-item border selected">
+                        <img src="./img/bianhua-red.png"/></a>
+                </li>
+                <li>
+                    <a href="javascript:void(0);" class="panel-item">
+                        <img src="./img/bianhua-yellow.png"/></a>
+                </li>
+                <li>
+                    <a href="javascript:void(0);" class="panel-item">
+                        <img src="./img/bianhua-green.png"/></a>
+                </li>
+                <li>
+                    <a href="javascript:void(0);" class="panel-item">
+                        <img src="./img/bianhua-other.png"/></a>
+                </li>
+                <!---->
+                <li>
+                    <a href="javascript:void(0);" class="panel-item">
+                        <img src="./img/bianhua-yellow.png"/></a>
+                </li>
+                <li>
+                    <a href="javascript:void(0);" class="panel-item">
+                        <img src="./img/bianhua-green.png"/></a>
+                </li>
+                <li>
+                    <a href="javascript:void(0);" class="panel-item">
+                        <img src="./img/bianhua-other.png"/></a>
+                </li>
+                <li>
+                    <a href="javascript:void(0);" class="panel-item">
+                        <img src="./img/bianhua-other.png"/></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!--draw img for frame-->
+    <img src="" id="J-frame" class="frame-img"/>
 </div>
 
-<script src="./index.js"></script>
+<script src="./index.js?v=23"></script>
 </body>
 </html>
