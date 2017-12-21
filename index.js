@@ -1,5 +1,7 @@
 $(function () {
 
+    FastClick.attach(document.body);
+            
     // 全局组件
     var filter = [
                     {
