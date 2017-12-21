@@ -16,6 +16,7 @@ $(function () {
                         style: [
                         {
                             name: '单门',
+                            type: 'dan-men',
                             selected: true,
                             // 主图
                             figure:[
@@ -45,6 +46,7 @@ $(function () {
                         {
                             name: '双门',
                             selected: false,
+                            type: 'shuang-men',
                             color: [
                                 {color: '蓝色', selected: false, url: './img/shuangmen-blue.png'},
                                 {color: '绿色', selected: false, url: './img/shuangmen-green.png'},
@@ -55,6 +57,7 @@ $(function () {
                         },
                         {
                             name: 'T门',
+                            type: 't-men',
                             selected: false,
                             color: [
                                 {color: '蓝色', selected: false, url: './img/t-blue.png'},
@@ -66,6 +69,7 @@ $(function () {
                         },
                         {
                             name: '十字门',
+                            type: 'shizi-men',
                             selected: false,
                             color: [
                                 {color: '蓝色', selected: false, url: './img/shizi-blue.png'},
@@ -90,7 +94,25 @@ $(function () {
                         {name: '',
                             color: []}
                     ]}
-                ]
+                ];
+
+    var tpl = {
+        'dan-men'   : 'danmen',
+        'shuang-men': 'shuangmen',
+        't-men'     : 'tmen',
+        'shizi-men' : 'shizimen'
+    }
+
+
+    /*
+    * 渲染母板
+    *
+    * */
+    function renderBg(type) {
+        console.log(tpl[type]);
+
+        document.getElementById('J-mask').className = 'mask ' + tpl[type];
+    }
 
     var app = new Vue({
         el: '#app',
@@ -101,6 +123,10 @@ $(function () {
         },
         components: {
             //Category : Category
+        },
+        mounted: function () {
+          // 根据当前选中的状态来确定母板
+
         },
         methods: {
             chooseItem: function (index) {
@@ -159,9 +185,14 @@ $(function () {
 
                                 for(var k = 0; color[k]; k++){
 
-                                    if(color[k].selected)
-                                        //return color[k];
+                                    if(color[k].selected){
+                                        // 渲染门框
                                         document.getElementById('J-frame').src = color[k].url;
+                                        // 渲染母板
+                                        renderBg(style[j].type);
+
+                                        return;
+                                    }
                                 }
                             }
                         }
@@ -191,7 +222,7 @@ $(function () {
         mask.css({
             'height': iH,
             'width': iw,
-            'margin-top': -iH - 2
+            'margin-top': -iH - 7
         })
 
         return {

@@ -272,10 +272,26 @@ ul,li{
     margin: auto;
     z-index: 10;
     position: relative;
-    background-color: rgba(208, 202, 202, 0.3);
     -webkit-filter: blur(2px);
     -moz-filter: blur(2px);
     -ms-filter: blur(2px);
     -o-filter: blur(2px);
     filter: blur(2px);
+    opacity: 0.5;
+}
+.danmen{
+    background: url(./img/danmen-bg.png) no-repeat;
+    background-size: 100% 100%;
+}
+.shuangmen{
+    background: url(./img/shuangmen-bg.png) no-repeat;
+    background-size: 100% 100%;
+}
+.tmen{
+    background: url(./img/tmen-bg.png) no-repeat;
+    background-size: 100% 100%;
+}
+.shizimen{
+    background: url(./img/shizimen-bg.png) no-repeat;
+    background-size: 100% 100%;
 }
