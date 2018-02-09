@@ -1,0 +1,59 @@
+body {
+  font-family: "Open Sans","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,SimSun,sans-serif;
+  line-height: 1.6;
+}
+
+a {
+  color: #00B7FF;
+}
+.wrapper{
+  width: 888px;
+  margin: auto;
+  min-height: 1000px;
+  padding: 10px 5px;
+  font-size: 14px;
+  color: #333;
+  &>h1{
+    font-weight: 700;
+    padding: 10px 0;
+  }
+  &>p{
+    padding: 5px 0;
+
+    &.item{
+      color: #666;
+    }
+    &.tip{
+      color: #e25050;
+      &:before{
+        content:"注：";
+      }
+    }
+
+    & a{
+      cursor: help;
+    }
+
+    &>span{
+      color: #cecece;
+      background: #545454;
+      padding: 5px 11px;
+      display: block;
+
+      &>em{
+        color: #1fada0;
+        &.bad{
+          color: #e45021;
+        }
+      }
+    }
+  }
+}
+
+.standard-list{
+  display: inline-block;
+
+  & li{
+    display: block;
+  }
+}

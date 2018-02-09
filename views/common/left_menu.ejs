@@ -1,0 +1,39 @@
+<div class="menu-left">
+    <ul>
+        <li>
+            <h2>综合</h2>
+        </li>
+        <li>
+            <a href="javascript:void(0);">快速上手</a>
+        </li>
+        <li>
+            <a href="javascript:void(0);">更新日志</a>
+        </li>
+    </ul>
+
+    <ul>
+        <li>
+            <h2 style="padding: 10px 0 0;">组件</h2>
+        </li>
+    </ul>
+
+    <%for(var i= 0; i < leftMenu.data.length; i++){%>
+    <%
+    var item = leftMenu.data[i];
+    %>
+    <ul>
+        <li>
+            <h3><%= item.type %></h3>
+
+            <%for(var j= 0; j < item.list.length; j++){%>
+        <li>
+            <a href="<%= item.list[j].path.replace('#/', '/ui/') %>"
+               class="<%= item.list[j].path.replace('#/', '') === label? 'current': '' %>"
+               rel="<%= item.list[j].path %>">
+                <%= item.list[j].name %></a>
+        </li>
+        <%}%>
+        </li>
+    </ul>
+    <%}%>
+</div>

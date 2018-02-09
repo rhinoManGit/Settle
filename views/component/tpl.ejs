@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- layout -->
+    <%-include("../common/layout_header")%>
+    <link rel='stylesheet' href='<%= link %>' />
+</head>
+<body>
+<div class="wraper">
+    <!-- 公共头部 -->
+    <%-include("../common/header")%>
+
+    <!-- content -->
+    <div class="wrapper-inner clearfix">
+
+        <!-- left menu-->
+        <%-include("../common/left_menu")%>
+
+        <!-- content -->
+        <div class="inner-content">
+
+            <div id="app" class="<%= core.class %>">
+
+                <h3 class="title"><%= core.name%></h3>
+                <p><%- core.outline%></p>
+
+                <%if(core.tips){%>
+
+                    <span class="tips">
+                        <i class="ivu-icon ivu-icon-information-circled"></i>
+                        <%- core.tips%></span>
+                <%}%>
+
+                <!-- explain info -->
+                <%-include("./_info")%>
+
+                <!-- api -->
+                <h3 class="title no-after">API</h3>
+
+                <!-- api list-->
+                <%-include("./_api")%>
+
+
+            </div>
+        </div>
+    </div>
+
+    <!-- 公共页脚 -->
+    <%-include("../common/footer")%>
+</div>
+<script type="text/javascript" src="<%= script %>"></script>
+</body>
+</html>

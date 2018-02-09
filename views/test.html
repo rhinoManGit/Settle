@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+
+    ss= '<template>\n' +
+        '    <Row>\n' +
+        '        <Col span="12">\n' +
+        '            <DatePicker type="date" :options="options3" placeholder="Select date" style="width: 200px"></DatePicker>\n' +
+        '        </Col>\n' +
+        '        <Col span="12">\n' +
+        '            <DatePicker type="date" :options="options4" placeholder="Select date" style="width: 200px"></DatePicker>\n' +
+        '        </Col>\n' +
+        '    </Row>\n' +
+        '</template>\n' +
+        '<script>\n' +
+        '    export default {\n' +
+        '        data () {\n' +
+        '            return {\n' +
+        '                options3: {\n' +
+        '                    disabledDate (date) {\n' +
+        '                        return date && date.valueOf() < Date.now() - 86400000;\n' +
+        '                    }\n' +
+        '                },\n' +
+        '                options4: {\n' +
+        '                    disabledDate (date) {\n' +
+        '                        const disabledDay = date.getDate();\n' +
+        '                        return disabledDay === 15;\n' +
+        '                    }\n' +
+        '                }\n' +
+        '            }\n' +
+        '        }\n' +
+        '    }\n' +
+        '<\/script>';
+
+
+</script>
+</body>
+</html>

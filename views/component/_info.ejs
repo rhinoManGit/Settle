@@ -1,0 +1,30 @@
+
+<%for(var i= 0; i < core.list.length; i++){%>
+    <%
+        var item = core.list[i];
+    %>
+    <div class="example-item">
+
+        <h3 class="primary"><%= item.title %></h3>
+
+        <p><%- item.info %></p>
+
+        <div class="performance clearfix">
+
+            <!-- demo -->
+            <div class="demo <%= core.class + 'item' + i %>">
+                <%-item.demo %>
+            </div>
+
+            <!-- code -->
+            <div class="code">
+                <div class="component-code J-code">
+                    <%-item.code%>
+                </div>
+
+                <p><a href="javascript:void(0);" v-on:click="troggleCode">显示代码</a></p>
+            </div>
+        </div>
+
+    </div>
+<%}%>

@@ -1,0 +1,21 @@
+
+<div class="ui-api">
+    <%for(var j= 0; j < core.api.length; j++){%>
+    <%
+        var module = core.api[j];
+    %>
+    <h3 class="primary"><%= module.name%></h3>
+    <table>
+        <%for(var k= 0; k < module.list.length; k++){%>
+        <%
+            var row = module.list[k];
+        %>
+        <tr>
+            <%for(var key in row){%>
+                <td><%= row[key]%></td>
+            <%}%>
+        </tr>
+        <%}%>
+    </table>
+    <%}%>
+</div>

@@ -1,0 +1,85 @@
+{
+  "name":"极课-UI组件",
+  "data": [
+    {
+      "type": "基础组件",
+      "list": [
+        {"name":"Grid 栅格", "path": "#/grid"},
+        {"name":"Layout 布局", "path": "#/layout"},
+        {"name":"Color 色彩", "path": "#/color"},
+        {"name":"Font 字体", "path": "#/font"},
+        {"name":"Button 按钮" , "path": "#/button"},
+        {"name":"Icon 图标", "path": "#/Icon"}
+      ]
+    },
+    {
+      "type": "Form组件",
+      "list": [
+        {"name":"Input 输入框", "path": "#/input"},
+        {"name":"Radio 单选框", "path": "#/radio"},
+        {"name":"Checkbox 多选框", "path": "#/checkbox"},
+        {"name":"Switch 开关", "path": "#/switch"},
+        {"name":"Table 表格", "path": "#/table"},
+        {"name":"Select 选择器", "path": "#/select"},
+        {"name":"AutoComplete 自动完成", "path": "#/autoComplete"},
+        {"name":"Slider 滑块", "path": "#/slider"},
+        {"name":"DatePicker 日期选择期", "path": "#/datePicker"},
+        {"name":"TimePicker 时间选择期", "path": "#/font"},
+        {"name":"Cascader 级联选择", "path": "#/cascader"},
+        {"name":"Transfer 穿梭框", "path": "#/transfer"},
+        {"name":"InputNumber 数字输入框", "path": "#/inputNumber"},
+        {"name":"Rate 评分", "path": "#/rate"},
+        {"name":"Upload 上传", "path": "#/upload"},
+        {"name":"ColorPicker 颜色选择器", "path": "#/colorPicker"},
+        {"name":"Form 表单", "path": "#/form"}
+      ]
+    },
+    {
+      "type": "View组件",
+      "list": [
+        {"name":"Alert 警告提示", "path": "#/alert"},
+        {"name":"Card 卡片", "path": "#/card"},
+        {"name":"Message 全局提示", "path": "#/message"},
+        {"name":"Notice 通知提醒", "path": "#/notice"},
+        {"name":"Modal 对话框", "path": "#/modal"},
+        {"name":"Progress 进度条", "path": "#/progress"},
+        {"name":"Avatar 头像", "path": "#/avatar"},
+        {"name":"Badge 徽标数", "path": "#/badge"},
+        {"name":"Collapse 折叠面板", "path": "#/collapse"},
+        {"name":"Timeline 时间轴", "path": "#/timeline"},
+        {"name":"Tag 标签", "path": "#/tag"},
+        {"name":"Tooltip 文字提示", "path": "#/tooltip"},
+        {"name":"Poptip 气泡提示", "path": "#/poptip"},
+        {"name":"Carousel 走马灯", "path": "#/carousel"},
+        {"name":"Tree 树形控件", "path": "#/tree"}
+      ]
+    },
+    {
+      "type": "Navigation组件",
+      "list": [
+        {"name":"Menu 导航菜单", "path": "#/menu"},
+        {"name":"Tabs 标签页", "path": "#/tabs"},
+        {"name":"Dropdown 下拉菜单", "path": "#/dropdown"},
+        {"name":"Page 分页", "path": "#/page"},
+        {"name":"Breadcrumb 面包屑", "path": "#/breadcrumb"},
+        {"name":"Steps 步骤条", "path": "#/steps"},
+        {"name":"LoadingBar 加载进度条", "path": "#/loadingBar"}
+      ]
+    },
+    {
+      "type": "Chart",
+      "list": [
+        {"name":"Circle 进度环", "path": "#/circle"}
+      ]
+    },
+    {
+      "type": "Other",
+      "list": [
+        {"name":"Affix 图钉", "path": "#/affix"},
+        {"name":"BackTop 返回顶部", "path": "#/backTop"},
+        {"name":"Spin 加载中", "path": "#/spin"},
+        {"name":"Scroll 无限滚动", "path": "#/scroll"}
+      ]
+    }
+  ]
+}

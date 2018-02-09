@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- layout -->
+    <%-include("common/layout_header")%>
+    <link rel='stylesheet' href='<%= link %>' />
+  </head>
+  <body>
+  <div class="wraper">
+      <!-- 公共头部 -->
+      <%-include("common/header")%>
+
+      <!-- content -->
+      <div class="wrapper-inner clearfix">
+
+        <!-- left menu-->
+        <%-include("common/left_menu")%>
+
+        <!-- content -->
+        <div class="inner-content">
+          <div id="app">
+          </div>
+        </div>
+      </div>
+
+      <!-- 公共页脚 -->
+      <%-include("common/footer")%>
+  </div>
+
+  <script type="text/javascript" src="<%= script %>"></script>
+  </body>
+</html>
